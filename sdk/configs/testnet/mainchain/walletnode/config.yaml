@@ -1,0 +1,13 @@
+# Theta configuration
+genesis:
+  hash: "0xa58cb754a23975c872ef06d8b54baf16eec88ad60f966368b950a6c16ae52ed9"
+consensus:
+  minBlockInterval: 6
+p2p:
+  port: 12000
+  seeds: 54.151.72.227:15872
+log:
+  levels: "*:info"
+  #levels: "*:debug"
+rpc:
+  enabled: true

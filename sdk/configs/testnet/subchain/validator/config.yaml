@@ -1,0 +1,23 @@
+# Theta configuration
+genesis:
+  hash: "<YOUR_GENESIS_HASH>""
+p2p:
+  port: 12100
+rpc:
+  enabled: true
+log:
+  levels: "*:info"
+  #levels: "*:debug"
+consensus:
+  minBlockInterval: 1
+subchain:
+  mainchainEthRpcURL: "http://localhost:18888/rpc"
+  subchainEthRpcURL: "http://localhost:19888/rpc"
+  chainRegistrarOnMainchain: "0x7b5F6232b8edDbe8281111Cf3A2A66f02EE384cD"
+  mainchainTFuelTB: "0x06a6Ae061f96bDe82Df9287B8CcceA8BF3f4fE98"
+  mainchainTNT20TB: "0x8630cBf6Ff7a0d2d0De7532a9699ab09814990E7"
+  mainchainTNT721TB: "0x13dF4dE155382bf91C435f1B0D5d5cD1E9DE0fe0"
+  mainchainTNT1155TB: "0x9141534881A49480cA2657dc71DBd647c9A9f379"
+  updateInterval: 3000
+  chainID: <YOUR_EVM_chainID>
+
