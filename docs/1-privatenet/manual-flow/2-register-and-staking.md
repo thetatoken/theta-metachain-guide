@@ -124,7 +124,7 @@ validator: 0x2E833968E5bB786Ae419c4d13189fB081Cc43bab, shareAmount: 100000000000
 
 ## 5. Run the Subchain validator and the ETH RPC Adapter
 
-After the above staking transaction is finalized, we can start the the Subchain Validator and its ETH RPC adapter in two new terminals. We need start the subchain ETH RPC adapter **before** starting the subchain validator. This order is important.
+After the above staking transaction is finalized, we can start the Subchain Validator and its ETH RPC adapter in two new terminals. We need start the subchain ETH RPC adapter **before** starting the subchain validator. This order is important.
 
 ```shell
 cd ~/metachain_playground/privatenet/workspace

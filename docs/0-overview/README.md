@@ -2,7 +2,7 @@
 
 This document gives an overview on how to launch a subchain. At a high level, it consists of the following steps:
 
-* **Preparation**: The The subchain operator needs to reserve an EVM chainID, prepare a sufficient amount of wTHETA which will be used as collateral for the subchain, generate the private/public key pairs for the initial set of subchain validators, and create the genesis snapshot for the subchain.
+* **Preparation**: The subchain operator needs to reserve an EVM chainID, prepare a sufficient amount of wTHETA which will be used as collateral for the subchain, generate the private/public key pairs for the initial set of subchain validators, and create the genesis snapshot for the subchain.
 
 * **Governance Token Generation**: Each subchain needs its own governance token, which is a TNT20 token deployed on the **Main Chain**. The The subchain operator needs to deploy the governance token.
 

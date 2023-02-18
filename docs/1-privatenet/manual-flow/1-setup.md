@@ -33,7 +33,6 @@ cd $GOPATH/src/github.com/thetatoken
 git clone https://github.com/thetatoken/theta-eth-rpc-adaptor
 export THETA_ETH_RPC_ADAPTOR_HOME=$GOPATH/src/github.com/thetatoken/theta-eth-rpc-adaptor
 cd $THETA_ETH_RPC_ADAPTOR_HOME
-cd $SUBCHAIN_HOME
 git checkout main
 git pull origin main
 export GO111MODULE=on
@@ -50,7 +49,7 @@ export SUBCHAIN_HOME=$GOPATH/src/github.com/thetatoken/thetasubchain
 cd $SUBCHAIN_HOME
 git checkout privatenet
 git pull origin privatenet
-​export GO111MODULE=on
+export GO111MODULE=on
 make install
 ```
 
