@@ -17,6 +17,8 @@ Please also check out [this section](../../0-overview/README.md#step-7-test-cros
 
 ## 1. TFuel Transfers
 
+**IMPORTANT NOTE**: Please wait until the subchain finalizes at least 100 blocks before testing the cross-chain transactions. Otherwise the cross-chain transactions could get stuck. Once the subchain start finalizing blocks, the Subchain validators should print `Notified finalized block, height=xxx` on the screen.
+
 Please run the following command to transfer TFuel between the mainchain and the subchain:
 
 ```shell

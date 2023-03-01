@@ -15,6 +15,8 @@ MockTNT1155 : 0x9D2DAB964Eb49BDB944Bc91832123572b9a10619
 
 ## 1. TFuel Transfers
 
+**IMPORTANT NOTE**: Please wait until the subchain finalizes at least 100 blocks before testing the cross-chain transactions. Otherwise the cross-chain transactions could get stuck. Once the subchain start finalizing blocks, the Subchain validators should print `Notified finalized block, height=xxx` on the screen.
+
 Please run the following commands to transfer TFuel between the Testnet Main Chain and the Subchain. Note that you'd need to replace `<SUBCHAIN_EVM_chainID>` with the EVM `chainID` you reserved for the Subchain on [chainlist.org](https://chainlist.org/).
 
 ```shell
