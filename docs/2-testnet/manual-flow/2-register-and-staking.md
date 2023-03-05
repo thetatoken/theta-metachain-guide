@@ -39,7 +39,7 @@ theta-eth-rpc-adaptor start --config=../mainchain/ethrpc
 
 Run the following commands to deploy the Governance token for the subchain. Note:
 
-* Here we use the [reference implementation](../../demos/subchain-governance-token/contracts/SubchainGovernanceToken.sol) of the Subchain Governance token. If you want to implement your own token, please replace with [this file](../../sdk/contracts/SubchainGovernanceToken.json) with the compiled contract before running the following commands.
+* Here we use the [reference implementation](../../../demos/subchain-governance-token/contracts/SubchainGovernanceToken.sol) of the Subchain Governance token. If you want to implement your own token, please replace with [this file](../../../sdk/contracts/SubchainGovernanceToken.json) with the compiled contract before running the following commands.
 
 * If you want to use your own imlementation, please compile your solidity source code, and replace this [SubchainGovernanceToken.json](../../../sdk/contracts/SubchainGovernanceToken.json) with the compiler output.
 
