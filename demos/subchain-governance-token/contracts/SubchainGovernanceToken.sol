@@ -38,7 +38,7 @@ contract SubchainGovernanceToken is ERC20 {
         uint256 initMintAmount_,
         address admin_
     ) ERC20(name_, symbol_) {
-        require(maxSupply_ < 2**96, "maxSupply too large"); // if maxSupply is too large, it may lead to problems in staking reward calculation
+        require(maxSupply_ < 2 ** 96, "maxSupply too large"); // if maxSupply is too large, it may lead to problems in staking reward calculation
         require(
             initMintAmount_ <= maxSupply_,
             "initial supply should not exceed the max supply"
@@ -60,11 +60,10 @@ contract SubchainGovernanceToken is ERC20 {
 
     // This method allow the minter (e.g. the ValidatorStakeManager contract) to mint new tokens to reward
     // the Subchain validator stakers
-    function mintStakerReward(address account, uint256 amount)
-        external
-        minterOnly
-        returns (bool)
-    {
+    function mintStakerReward(
+        address account,
+        uint256 amount
+    ) external minterOnly returns (bool) {
         if (msg.sender != minter) {
             return false;
         }
@@ -85,10 +84,9 @@ contract SubchainGovernanceToken is ERC20 {
         return _stakerRewardPerBlock;
     }
 
-    function updateStakerRewardPerBlock(uint256 stakerRewardPerBlock_)
-        external
-        adminOnly
-    {
+    function updateStakerRewardPerBlock(
+        uint256 stakerRewardPerBlock_
+    ) external adminOnly {
         _stakerRewardPerBlock = stakerRewardPerBlock_;
         emit UpdateStakerRewardPerBlock(_stakerRewardPerBlock);
     }
