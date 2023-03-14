@@ -48,11 +48,17 @@ async function withdrawStakeFromSubchainValidator(shareAmountInWei, validatorAdd
     }
 
     console.log('Withdraw', shareAmountInWei.toString(), 'shares from the wallet to validator', validatorAddr, '\n')
-    initFeeInWei = expandTo18Decimals(cfg().initialFee)
+    // let subchainTotalShares = await validatorStakeManager.totalShareOf(cfg().subchainID)
+    // let totalStakedGovTokens = await govTokenContract.balanceOf(vsmAddr)
+    // let estimatedGovTokensWithdrawn = totalStakedGovTokens.mul(shareAmountInWei).div(subchainTotalShares).toString()
+    let stakerTotalShares = await validatorStakeManager.shareOf(cfg().subchainID, walletAddr)
+    let estimatedTotalStakedGovTokens = await validatorStakeManager.estimatedGovernanceTokenOwnedBy(cfg().subchainID, walletAddr)
+    let estimatedGovTokensWithdrawn = estimatedTotalStakedGovTokens.mul(shareAmountInWei).div(stakerTotalShares).toString()
 
     console.log('Subchain ID       :', cfg().subchainID)
     console.log('Validator address :', validatorAddr)
-    console.log('share amount      :', shareAmountInWei.toString(), "GovTokenWei")
+    console.log('share amount      :', shareAmountInWei.toString(), "SharesInWei")
+    console.log('estimated governance token withdrawn:', estimatedGovTokensWithdrawn.toString(), "GovTokensInWei")
 
     let withdrawalTx = await chainRegistrarOnMainchainContract.withdrawStake(cfg().subchainID, validatorAddr, shareAmountInWei)
 
