@@ -8,3 +8,4 @@ In this tutorial, we will guide you through setting up the simplest possible Met
 
 * **Step 3**. [Cross-chain Asset Transfers](./manual-flow/3-cross-chain-asset-transfers.md)
 
+* **Step 4**. [More on Subchain Validator Staking](./manual-flow/4-more-on-subchain-validator-staking.md)
