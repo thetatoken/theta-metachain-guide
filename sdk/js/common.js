@@ -7,6 +7,7 @@ const { BigNumber } = require("@ethersproject/bignumber");
 const {cfg} = require("./configs.js")
 
 const ChainRegistrarOnMainchainContract = require("../contracts/ChainRegistrarOnMainchain.json");
+const ValidatorStakeManager = require("../contracts/ValidatorStakeManager.json");
 const SubchainGovernanceTokenContract = require("../contracts/SubchainGovernanceToken.json")
 const TNT20TokenInterface = require("../contracts/ITNT20.json")
 
@@ -144,6 +145,17 @@ async function detectTargetChainReceiverBalanceChanges(targetChainIDStr, targetC
     console.log("")
 }
 
+async function printValidatorSetForDynasty(chainRegistrarOnMainchainContract, dynasty) {
+    const {validators, shareAmounts} = await chainRegistrarOnMainchainContract.getValidatorSet(cfg().subchainID, dynasty)
+    const numValidators = validators.length;
+    for (let i = 0; i < numValidators; i ++) {
+        let val = validators[i];
+        let shareAmount = shareAmounts[i];
+        console.log(`validator: ${val}, shareAmount: ${shareAmount.toString()}`)
+    }
+    console.log('')
+}
+
 function buildDenom(originChainID, tokenTypeStr, originChainTokenContractAddr) {
     let denom = originChainID.toString() + "/" + tokenTypeStr + "/" + originChainTokenContractAddr;
     return denom.toLowerCase();
@@ -206,6 +218,7 @@ function getTokenBank(tokenType, chainID, senderKeyPath, senderKeyPassword) {
 
 module.exports = {
     ChainRegistrarOnMainchainContract,
+    ValidatorStakeManager,
     SubchainGovernanceTokenContract,
     TNT20TokenInterface,
     TFuelTokenBankContract,
@@ -228,5 +241,6 @@ module.exports = {
     buildDenom,
     extractOriginChainIDFromDenom,
     extractContractAddressFromDenom,
-    getTokenBank
+    getTokenBank,
+    printValidatorSetForDynasty
 }
