@@ -80,7 +80,7 @@ The above script should output the hash of the minting transaction. You can use 
 
 Next, register the subchain using the following command. Note that 
 
-* In the following command, replace 0x9fd6c9a45e4c9eb7ed3424f92e58ce4103f3844f04e967f91e38894e4900fbf5 with the actual "Genesis block hash" if you created the genesis snapshot yourself
+* In the following command, replace 0x9fbd08fc250bdf051e5a031457ce8225a7d511bf6c31cbc521d1c8c2e37323dd with the actual "Genesis block hash" if you created the genesis snapshot yourself
 
 * If you created the genesis snapshot with a subchainIDStr different than the default `tsub360777`, you would need to update `PrivatenetConfigs.subchainID` and `PrivatenetConfigs.subchainIDStr` in [configs.js](../../../sdk/js/configs.js) accordingly. Note that since the Privatenet is just running in the local environment, you do not need to register the EVM `chainID` on [chainlist.org](https://chainlist.org/).
 
@@ -88,7 +88,7 @@ Next, register the subchain using the following command. Note that
 cd $METACHAIN_GUIDE_ROOT
 cd sdk/js
 
-node registerSubchain.js privatenet 0x9fd6c9a45e4c9eb7ed3424f92e58ce4103f3844f04e967f91e38894e4900fbf5 ~/.thetacli/keys/encrypted/2E833968E5bB786Ae419c4d13189fB081Cc43bab qwertyuiop
+node registerSubchain.js privatenet 0x9fbd08fc250bdf051e5a031457ce8225a7d511bf6c31cbc521d1c8c2e37323dd ~/.thetacli/keys/encrypted/2E833968E5bB786Ae419c4d13189fB081Cc43bab qwertyuiop
 ```
 
 The script prints all registered subchains before and after the registration transaction. The output should look similar to:
@@ -100,7 +100,7 @@ Registering suchain 360777
 Subchain registration tx:  0xe3d64770ff8a7f3a27b2e9c086cfa9fe433545002a41435990b78884158c140a
 
 All registered subchains:
-Subchain, ID: 360777, metadata: 0x2E833968E5bB786Ae419c4d13189fB081Cc43bab,10000000000000000000000,0x7ad6cEA2BC3162E30A3C98d84f821b3233C22647,0x9fd6c9a45e4c9eb7ed3424f92e58ce4103f3844f04e967f91e38894e4900fbf5,106,true
+Subchain, ID: 360777, metadata: 0x2E833968E5bB786Ae419c4d13189fB081Cc43bab,10000000000000000000000,0x7ad6cEA2BC3162E30A3C98d84f821b3233C22647,0x9fbd08fc250bdf051e5a031457ce8225a7d511bf6c31cbc521d1c8c2e37323dd,106,true
 
 ```
 
