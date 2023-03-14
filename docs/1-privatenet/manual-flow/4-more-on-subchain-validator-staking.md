@@ -71,9 +71,13 @@ cd ~/metachain_playground/privatenet/workspace
 thetasubchain start --config=../subchain/validator2 --password=qwertyuiop
 ```
 
-Wait until Validator2 to get in sync with Validator1. Then use the following command to stake to Validator2 from staker `0x490ae30F584E778Fb5FbcAb6aC650692aaa45FbE`:
+Wait until Validator2 `0x6226992905016b8Ce1B35c0c46D5cc17E4706941` to get in sync with Validator1. Then use the following command to stake to Validator2 from staker `0x2E833968E5bB786Ae419c4d13189fB081Cc43bab` and `0x490ae30F584E778Fb5FbcAb6aC650692aaa45FbE`:
 
 ```shell
+# Deposit stake with wTHETA collateral and intial fee
+node depositStake.js privatenet 100000000000000000000000 0x6226992905016b8Ce1B35c0c46D5cc17E4706941 ~/.thetacli/keys/encrypted/2E833968E5bB786Ae419c4d13189fB081Cc43bab qwertyuiop
+
+# Since the collateral and initial fee requirement have been satisfied, another staker can deposit stake without wTHETA collateral and intial fee
 node depositStake.js privatenet 10000000 0x6226992905016b8Ce1B35c0c46D5cc17E4706941 0 0 ~/.thetacli/keys/encrypted/490ae30F584E778Fb5FbcAb6aC650692aaa45FbE qwertyuiop
 ```
 
