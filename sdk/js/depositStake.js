@@ -56,7 +56,7 @@ async function stakeToSubchainValidator(amountInWei, validatorAddr, wThetaCollat
     console.log('Stake', amountInWei.toString(), 'Gov token from the wallet to validator', validatorAddr, '\n')
 
     if (tFuelFeeInWei == DontCare) {
-        tFuelFeeInWei = expandTo18Decimals(cfg().initialFee)
+        tFuelFeeInWei = expandTo18Decimals(cfg().initialFee).mul(2)
     }
     
     console.log('Subchain ID       :', cfg().subchainID)
