@@ -17,8 +17,8 @@ mkdir -p $GOPATH/src/github.com/thetatoken
 git clone https://github.com/thetatoken/theta-protocol-ledger.git $GOPATH/src/github.com/thetatoken/theta
 export THETA_HOME=$GOPATH/src/github.com/thetatoken/theta
 cd $THETA_HOME
-git checkout testnet
-git pull origin testnet
+git checkout sc-privatenet
+git pull origin sc-privatenet
 export GO111MODULE=on
 make install
 ```
