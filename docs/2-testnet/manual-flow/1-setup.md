@@ -17,8 +17,8 @@ mkdir -p $GOPATH/src/github.com/thetatoken
 git clone https://github.com/thetatoken/theta-protocol-ledger.git $GOPATH/src/github.com/thetatoken/theta
 export THETA_HOME=$GOPATH/src/github.com/thetatoken/theta
 cd $THETA_HOME
-git checkout sc-privatenet
-git pull origin sc-privatenet
+git checkout testnet
+git pull origin testnet
 export GO111MODULE=on
 make install
 ```
@@ -43,6 +43,11 @@ make install
 Compile the subchain binaries from source code:
 
 ```shell
+# switch THETA to the sc-privatenet branch before compiling thetasubchain
+cd $THETA_HOME
+git checkout sc-privatenet
+git pull origin sc-privatenet
+
 git clone https://github.com/thetatoken/theta-protocol-subchain.git $GOPATH/src/github.com/thetatoken/thetasubchain
 export SUBCHAIN_HOME=$GOPATH/src/github.com/thetatoken/thetasubchain
 cd $SUBCHAIN_HOME

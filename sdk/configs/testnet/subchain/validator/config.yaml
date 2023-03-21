@@ -1,6 +1,6 @@
-# Theta configuration
+# Theta Subchain configuration
 genesis:
-  hash: "<YOUR_GENESIS_HASH>""
+  hash: "<YOUR_GENESIS_HASH>"
 p2p:
   port: 12100
 rpc:
@@ -19,5 +19,6 @@ subchain:
   mainchainTNT721TB: "0x0603E7fad093A88C9ADBC685808961FADDAfFF97"
   mainchainTNT1155TB: "0xD840b9662bf74Ae9838ccEf645E0D6d1573AA9E7"
   updateInterval: 3000
+  # use the numerical EVM chainID for <YOUR_EVM_chainID> below, e.g. 360998877 
   chainID: <YOUR_EVM_chainID>
 
