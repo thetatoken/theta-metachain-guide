@@ -14,6 +14,8 @@ We provide two options, namely the **manual flow** and the **wizard flow** for l
 
   * **Step 3**. [Cross-chain Asset Transfers](./manual-flow/3-cross-chain-asset-transfers.md)
 
+  * **Step 4**. [More on Subchain Validator Staking](./manual-flow/4-more-on-subchain-validator-staking.md)
+
 * **Option 2**. Wizard Flow
 
   * Please check out [this guide](./wizard-flow/1-wizard-flow.md) for more details.
