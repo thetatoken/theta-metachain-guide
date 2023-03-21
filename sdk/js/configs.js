@@ -38,11 +38,11 @@ let TestnetConfigs = {
     mainchainRPC : "http://127.0.0.1:16888/rpc",
     wTHETAAddr : "0x90e6ca1087a2340da858069cb8d78d595e4ac798",
     registrarOnMainchainAddr : "<ADDR_OF_YOUR_GOV_TOKEN_CONTRACT>",
-    govTokenContractAddr : "0x0219ccba77e8924449194e5add722f2108f62982",
-    mainchainTFuelTokenBankAddr : "0x06a6Ae061f96bDe82Df9287B8CcceA8BF3f4fE98",
-    mainchainTNT20TokenBankAddr : "0x8630cBf6Ff7a0d2d0De7532a9699ab09814990E7",
-    mainchainTNT721TokenBankAddr : "0x13dF4dE155382bf91C435f1B0D5d5cD1E9DE0fe0",
-    mainchainTNT1155TokenBankAddr : "0x9141534881A49480cA2657dc71DBd647c9A9f379",
+    govTokenContractAddr : "0x359878c13F8690710FDCb2cDB6Da1c0A92661b9E",
+    mainchainTFuelTokenBankAddr : "0x1678BbaB6Db608B27Dac2802C1d89E280b8C2C8f",
+    mainchainTNT20TokenBankAddr : "0x02Cbc51C5bbc37F93ad211a5F405aab00B0951b1",
+    mainchainTNT721TokenBankAddr : "0x0603E7fad093A88C9ADBC685808961FADDAfFF97",
+    mainchainTNT1155TokenBankAddr : "0xD840b9662bf74Ae9838ccEf645E0D6d1573AA9E7",
 
     subchainID : "<YOUR_EVM_CHAIN_ID_INT>", // e.g. 1666666
     subchainIDStr : "<tsub+YOUR_EVM_CHAIN_ID_INT>", // e.g. "tsub1666666"

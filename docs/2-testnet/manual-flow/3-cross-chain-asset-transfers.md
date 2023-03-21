@@ -3,10 +3,10 @@
 In addition to the `ChainRegistrarOnMainchain` contract, the Main Chain snapshot also include the Token Bankd contracts and some mock TNT tokens deployed at the following addresses. This guide shows how we can interact with these contracts to transfer assets between the Main Chain and the Subchain.
 
 ```
-TFuelTokenBank   : 0x06a6Ae061f96bDe82Df9287B8CcceA8BF3f4fE98
-TNT20TokenBank   : 0x8630cBf6Ff7a0d2d0De7532a9699ab09814990E7
-TNT721TokenBank  : 0x13dF4dE155382bf91C435f1B0D5d5cD1E9DE0fe0
-TNT1155TokenBank : 0x9141534881A49480cA2657dc71DBd647c9A9f379
+TFuelTokenBank   : 0x1678BbaB6Db608B27Dac2802C1d89E280b8C2C8f
+TNT20TokenBank   : 0x02Cbc51C5bbc37F93ad211a5F405aab00B0951b1
+TNT721TokenBank  : 0x0603E7fad093A88C9ADBC685808961FADDAfFF97
+TNT1155TokenBank : 0xD840b9662bf74Ae9838ccEf645E0D6d1573AA9E7
 
 MockTNT20   : 0xC74c9a64d243bD2bc14C561E4D6B7DAAE19C73eA
 MockTNT721  : 0x166f67eDad98c3382323e7E8E64C8dD24d9C29a7

@@ -71,7 +71,7 @@ cd sdk/js
 npm install
 
 mkdir -p ~/.thetacli/keys/encrypted/
-cp keys/encrypted/2E833968E5bB786Ae419c4d13189fB081Cc43bab ~/.thetacli/keys/encrypted/
+cp keys/encrypted/* ~/.thetacli/keys/encrypted/
 ```
 
 Next, copy over the configs for both the Main Chain and the Subchain:
