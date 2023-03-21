@@ -92,6 +92,11 @@ async function withdrawStakeFromSubchainValidator(shareAmountInWei, validatorAdd
 //
 // node withdrawStake.js privatenet 1000 0x2E833968E5bB786Ae419c4d13189fB081Cc43bab ~/.thetacli/keys/encrypted/2E833968E5bB786Ae419c4d13189fB081Cc43bab qwertyuiop
 
+//
+// Testnet examples (where the mainchain chainID is 365)
+//
+// node withdrawStake.js testnet 1000 0x2E833968E5bB786Ae419c4d13189fB081Cc43bab ~/.thetacli/keys/encrypted/2E833968E5bB786Ae419c4d13189fB081Cc43bab qwertyuiop
+
 if (process.argv && !(process.argv.length == 6 || process.argv.length == 7)) {
     console.log("Usage:");
     console.log("  node depositStake.js <networkType> <shareAmountInWei> <validatorAddr> <stakerKeyPath> [password]");

@@ -50,6 +50,11 @@ async function sendSubchainGovernanceToken(govTokenContractAddress, amountInWei,
 //
 // node sendGovToken.js privatenet 1000000000 0x490ae30F584E778Fb5FbcAb6aC650692aaa45FbE ~/.thetacli/keys/encrypted/2E833968E5bB786Ae419c4d13189fB081Cc43bab qwertyuiop
 
+//
+// Testnet examples (where the mainchain chainID is 365)
+//
+// node sendGovToken.js testnet 1000000000 0x490ae30F584E778Fb5FbcAb6aC650692aaa45FbE ~/.thetacli/keys/encrypted/2E833968E5bB786Ae419c4d13189fB081Cc43bab qwertyuiop
+
 if (process.argv && !(process.argv.length == 7)) {
     console.log("Usage:");
     console.log("  node deployGovToken.js <networkType> <govTokenContractAddress> <amountInWei> <receiverAddr> <senderKeyPath> [password]");

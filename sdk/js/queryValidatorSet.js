@@ -21,6 +21,11 @@ async function queryValidatorSet(dynasty) {
 //
 // node queryValidatorSet.js privatenet 1
 
+//
+// Testnet examples (where the mainchain chainID is 365)
+//
+// node queryValidatorSet.js testnet 1
+
 if (process.argv && !(process.argv.length >= 3)) {
     console.log("Usage:");
     console.log("  node queryValidatorSet.js <networkType> <dynasty>");

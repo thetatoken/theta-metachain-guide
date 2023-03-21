@@ -94,6 +94,9 @@ async function stakeToSubchainValidator(amountInWei, validatorAddr, wThetaCollat
 // node depositStake.js testnet 10000000000000000000000000 0x11Ac5dCCEa0603a24E10B6f017C7c3285D46CE8e ~/.thetacli/keys/encrypted/2E833968E5bB786Ae419c4d13189fB081Cc43bab
 // node depositStake.js testnet 15000000000000000000000000 0x2f63946ff190Bd82E053fFF553ef208FbDEB2e67 ~/.thetacli/keys/encrypted/2E833968E5bB786Ae419c4d13189fB081Cc43bab
 // node depositStake.js testnet 18000000000000000000000000 0x372D9d124D9B2B5598109009525533578aDF9d45 ~/.thetacli/keys/encrypted/2E833968E5bB786Ae419c4d13189fB081Cc43bab
+//
+// When the collateral and minimum fee requirements are satisfied, staking requires neither wTHETA collateral nor TFuel fee
+// node depositStake.js testnet 10000000 0x372D9d124D9B2B5598109009525533578aDF9d45 0 0 ~/.thetacli/keys/encrypted/2E833968E5bB786Ae419c4d13189fB081Cc43bab qwertyuiop
 
 if (process.argv && !(process.argv.length >= 6 && process.argv.length <= 9)) {
     console.log("Usage:");
