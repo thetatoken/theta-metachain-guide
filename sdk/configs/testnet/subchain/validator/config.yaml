@@ -5,6 +5,7 @@ p2p:
   port: 12100
 rpc:
   enabled: true
+  port: 16901
 log:
   levels: "*:info"
   #levels: "*:debug"
