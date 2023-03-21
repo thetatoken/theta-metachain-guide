@@ -35,10 +35,10 @@ let TestnetConfigs = {
     mainchainID : 365,
     mainchainIDStr : "testnet",
     // mainchainRPC: "http://54.151.72.227:16888/rpc",
-    mainchainRPC : "http://127.0.0.1:16888/rpc",
+    mainchainRPC : "http://127.0.0.1:16888/rpc", // assuming that we are running a Testnet walletnode locally
     wTHETAAddr : "0x90e6ca1087a2340da858069cb8d78d595e4ac798",
-    registrarOnMainchainAddr : "<ADDR_OF_YOUR_GOV_TOKEN_CONTRACT>",
-    govTokenContractAddr : "0x359878c13F8690710FDCb2cDB6Da1c0A92661b9E",
+    registrarOnMainchainAddr : "0x359878c13F8690710FDCb2cDB6Da1c0A92661b9E",
+    govTokenContractAddr : "<ADDR_OF_YOUR_GOV_TOKEN_CONTRACT>",
     mainchainTFuelTokenBankAddr : "0x1678BbaB6Db608B27Dac2802C1d89E280b8C2C8f",
     mainchainTNT20TokenBankAddr : "0x02Cbc51C5bbc37F93ad211a5F405aab00B0951b1",
     mainchainTNT721TokenBankAddr : "0x0603E7fad093A88C9ADBC685808961FADDAfFF97",
@@ -51,7 +51,7 @@ let TestnetConfigs = {
     subchainTNT20TokenBankAddr : "0x47e9Fbef8C83A1714F1951F142132E6e90F5fa5D",
     subchainTNT721TokenBankAddr : "0x8Be503bcdEd90ED42Eff31f56199399B2b0154CA",
     subchainTNT1155TokenBankAddr : "0x47c5e40890bcE4a473A49D7501808b9633F29782",
-    initialFee : 100000,
+    initialFee : 10000,
 
     crossChainTransferFeeInTFuel : 10
 }
@@ -76,7 +76,7 @@ let MainnetConfigs = {
     subchainTNT20TokenBankAddr : "0x47e9Fbef8C83A1714F1951F142132E6e90F5fa5D",
     subchainTNT721TokenBankAddr : "0x8Be503bcdEd90ED42Eff31f56199399B2b0154CA",
     subchainTNT1155TokenBankAddr : "0x47c5e40890bcE4a473A49D7501808b9633F29782",
-    initialFee : 20000,
+    initialFee : 10000,
 
     crossChainTransferFeeInTFuel : 10
 }

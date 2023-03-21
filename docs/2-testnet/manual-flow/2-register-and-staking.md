@@ -28,7 +28,7 @@ Wait until the Main Chain walletnode gets insync with the network. This may take
 thetacli query status
 ```
 
-After the Main Chain walletnode is in-sync with the network, run the following command in *another terminal*:
+**After** the Main Chain walletnode is in-sync with the network, run the following command in *another terminal*:
 
 ```shell
 cd ~/metachain_playground/testnet/workspace
@@ -71,7 +71,7 @@ Then, update `testnetConfigs.govTokenContractAddr` in [configs.js](../../sdk/js/
 
 First, please setup an admin wallet. You can generate it using the `thetacli key new` command or through the [Theta Web Wallet](https://wallet.thetatoken.org/unlock/keystore-file). If you generate the wallet using `thetacli key new`, it will automatically place the keystore file under `~/.thetacli/keys/encrypted/`. If you generate the key using the Theta Web Wallet, please copy the keystore file to the same folder.
 
-Next, send 14,000 native Testnet Theta and some TFuel to your admin wallet. The Theta will essentially be used as the collateral for the subchain. You'd need to wrap the native Theta into `wTHETA` tokens first. To do this, you can import the admin wallet keystore file to the [Theta Web Wallet](https://wallet.thetatoken.org/unlock/keystore-file) and use it to wrap native Theta inoto `wTHETA`. The TFuel are for two purposes: 1) use as the gas fee since the admin wallet needs to interact smart contracts; 2) on the testnet, the admin wallet needs to send 100,000 TFuel to **each** validator since the validators need to burn gas for cross-chain transactions. Say you have 4 initial validators, the admin wallet would need to have at least 405,000 TFuel to get the Subchain up and running.
+Next, send 14,000 native Testnet Theta and some TFuel to your admin wallet. The Theta will essentially be used as the collateral for the subchain. You'd need to wrap the native Theta into `wTHETA` tokens first. To do this, you can import the admin wallet keystore file to the [Theta Web Wallet](https://wallet.thetatoken.org/unlock/keystore-file) and use it to wrap native Theta inoto `wTHETA`. The TFuel are for two purposes: 1) use as the gas fee since the admin wallet needs to interact smart contracts; 2) on the testnet, the admin wallet needs to send 20,000 TFuel to **each** validator since the validators need to burn gas for cross-chain transactions. Say you have 4 initial validators, the admin wallet would need to have at least 85,000 TFuel to get the Subchain up and running.
 
 With sufficient amount of `wTHETA` and TFuel in the admin wallet, you can register the subchain using the following command. Note that: 
 
@@ -98,7 +98,7 @@ Run the following command to stake to your validator(s), the specified `<INIT_ST
 node depositStake.js testnet <INIT_STAKE_AMOUNT> <VALIDATOR_ADDRESS> <PATH/TO/ADMIN_WALLET_KEYSTORE_FILE> <ADMIN_WALLET_PASSWORD>
 ```
 
-The script prints out the ValidatorSet of the next dynasty. Make sure your validators are included. If not, please search with the tx hash on the [Theta Testnet explorer](https://testnet-explorer.thetatoken.org/) and see why it failed.
+The script prints out the ValidatorSet of the next dynasty. Make sure your validators are included. If not, please search with the tx hash on the [Theta Testnet explorer](https://testnet-explorer.thetatoken.org/) and see why it failed. A possible cause is that the admin wallet does not have sufficient amount of wTHETA and TFuel (least 14,000 wTHETA and 85,000 TFuel are required). 
 
 ## 5. Run the Subchain validator and the ETH RPC Adapter
 
@@ -107,7 +107,12 @@ After the above staking transaction is finalized, we can start the ETH RPC adapt
 ```shell
 cd ~/metachain_playground/testnet/workspace
 theta-eth-rpc-adaptor start --config=../subchain/ethrpc
+```
 
+Next, please place the keystore file of your subchain validator (i.e. the keystore file corresponds to`<VALIDATOR_ADDRESS>` you specified above) under `~/metachain_playground/testnet/subchain/validator/key/encrypted/`. Then, run the following command to start the validator:
+
+
+```
 cd ~/metachain_playground/testnet/workspace
 thetasubchain start --config=../subchain/validator --password=<VALIDATOR_PASSWORD>
 ```
