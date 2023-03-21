@@ -10,7 +10,7 @@ Execute the following command to transfer some TFUEL and Subchain governance tok
 SEQ=$(thetacli query account --address=0x2E833968E5bB786Ae419c4d13189fB081Cc43bab | grep sequence | grep -o -E '[0-9]+')
 thetacli tx send --chain="privatenet" --from=0x2E833968E5bB786Ae419c4d13189fB081Cc43bab --to=0x490ae30F584E778Fb5FbcAb6aC650692aaa45FbE --tfuel=100 --password=qwertyuiop --seq=$((SEQ+1))
 
-node sendGovToken.js privatenet 0x7ad6cea2bc3162e30a3c98d84f821b3233c22647 1000000000 0x490ae30F584E778Fb5FbcAb6aC650692aaa45FbE ~/.thetacli/keys/encrypted/2E833968E5bB786Ae419c4d13189fB081Cc43bab qwertyuiop
+node sendGovToken.js privatenet 1000000000 0x490ae30F584E778Fb5FbcAb6aC650692aaa45FbE ~/.thetacli/keys/encrypted/2E833968E5bB786Ae419c4d13189fB081Cc43bab qwertyuiop
 ```
 
 Now, deposit stake the Subchain validator from the new wallet `0x490ae30F584E778Fb5FbcAb6aC650692aaa45FbE`. Note that validator `0x2E833968E5bB786Ae419c4d13189fB081Cc43bab` already has a sufficient amount of wTHETA collateral and TFuel to support cross-chain transactions. Hence the new staker neither needs to deposit additional wTHETA collateral, nor needs to send TFuel to the validator.

@@ -48,9 +48,9 @@ async function sendSubchainGovernanceToken(govTokenContractAddress, amountInWei,
 //
 // Privatenet examples (where the mainchain chainID is 366)
 //
-// node sendGovToken.js privatenet 0x7ad6cea2bc3162e30a3c98d84f821b3233c22647 1000000000 0x490ae30F584E778Fb5FbcAb6aC650692aaa45FbE ~/.thetacli/keys/encrypted/2E833968E5bB786Ae419c4d13189fB081Cc43bab qwertyuiop
+// node sendGovToken.js privatenet 1000000000 0x490ae30F584E778Fb5FbcAb6aC650692aaa45FbE ~/.thetacli/keys/encrypted/2E833968E5bB786Ae419c4d13189fB081Cc43bab qwertyuiop
 
-if (process.argv && !(process.argv.length == 8)) {
+if (process.argv && !(process.argv.length == 7)) {
     console.log("Usage:");
     console.log("  node deployGovToken.js <networkType> <govTokenContractAddress> <amountInWei> <receiverAddr> <senderKeyPath> [password]");
     console.log("");
@@ -60,14 +60,14 @@ if (process.argv && !(process.argv.length == 8)) {
 let networkType = process.argv[2];
 setCfg(networkType);
 
-let govTokenContractAddress = process.argv[3];
-let amountInWei = process.argv[4];
-let receiverAddr = process.argv[5];
-let senderKeyPath = process.argv[6];
+let govTokenContractAddress = cfg().SubchainGovernanceTokenContract;
+let amountInWei = process.argv[3];
+let receiverAddr = process.argv[4];
+let senderKeyPath = process.argv[5];
 
 let password = null
-if (process.argv.length == 8) {
-    password = process.argv[7];
+if (process.argv.length == 7) {
+    password = process.argv[6];
 }
 
 sendSubchainGovernanceToken(govTokenContractAddress, amountInWei, receiverAddr, senderKeyPath, password)

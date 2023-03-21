@@ -74,3 +74,7 @@ node transferTNT1155.js testnet 0x9D2DAB964Eb49BDB944Bc91832123572b9a10619 <SUBC
 # Subchain to Main Chain Transfer (burn vouchers on the subchain):
 node transferTNT1155.js testnet 0x0ede92cAc9161F6C397A604DE508Dcd1e6f43E61 365 0x2E833968E5bB786Ae419c4d13189fB081Cc43bab 123 1111 ~/.thetacli/keys/encrypted/2E833968E5bB786Ae419c4d13189fB081Cc43bab qwertyuiop
 ```
+
+## Next
+
+Please proceed to the next step to [learn more about Subchain validator staking](./4-more-on-subchain-validator-staking.md).
