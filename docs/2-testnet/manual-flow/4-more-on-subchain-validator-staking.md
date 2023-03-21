@@ -63,12 +63,12 @@ One staker can stake to multiple Validators of a Subchain. First, start the seco
 
 ```shell
 # Open a new terminal and run the following commands
-cd ~/metachain_playground/privatenet/workspace
+cd ~/metachain_playground/testnet/workspace
 theta-eth-rpc-adaptor start --config=../subchain/ethrpc2
 
 # Open yet another terminal and run the following commands
-cd ~/metachain_playground/privatenet/workspace
-cp ./subchain/validator/snapshot ../subchain/validator2/
+cd ~/metachain_playground/testnet/workspace
+cp ../subchain/validator/snapshot ../subchain/validator2/
 thetasubchain start --config=../subchain/validator2 --password=qwertyuiop
 ```
 
@@ -76,19 +76,19 @@ Wait until Validator2 to get in sync with Validator1. Then use the following com
 
 ```shell
 # Deposit stake with wTHETA collateral and intial fee
-node depositStake.js privatenet 100000000000000000000000 <VALIDATOR2> 1000000000000000000000 20000000000000000000000 ~/.thetacli/keys/encrypted/2E833968E5bB786Ae419c4d13189fB081Cc43bab qwertyuiop
+node depositStake.js testnet 100000000000000000000000 <VALIDATOR2> 1000000000000000000000 20000000000000000000000 ~/.thetacli/keys/encrypted/2E833968E5bB786Ae419c4d13189fB081Cc43bab qwertyuiop
 
 # Since the collateral and initial fee requirement have been satisfied, another staker can deposit stake without wTHETA collateral and intial fee
-node depositStake.js privatenet 10000000 <VALIDATOR2> 0 0 ~/.thetacli/keys/encrypted/490ae30F584E778Fb5FbcAb6aC650692aaa45FbE qwertyuiop
+node depositStake.js testnet 10000000 <VALIDATOR2> 0 0 ~/.thetacli/keys/encrypted/490ae30F584E778Fb5FbcAb6aC650692aaa45FbE qwertyuiop
 ```
 
 Valiator2 should start servicing as a validator for the Subchain when the next dynasty starts. After that, you can withdraw and claim part of the stakes from Validator2:
 
 ```shell
 # Withdraw stake from Validator2
-node withdrawStake.js privatenet 7777 <VALIDATOR2> ~/.thetacli/keys/encrypted/490ae30F584E778Fb5FbcAb6aC650692aaa45FbE qwertyuiop
+node withdrawStake.js testnet 7777 <VALIDATOR2> ~/.thetacli/keys/encrypted/490ae30F584E778Fb5FbcAb6aC650692aaa45FbE qwertyuiop
 
 # Wait until the return height, and claim the governance tokens back
-node claimStake.js privatenet ~/.thetacli/keys/encrypted/490ae30F584E778Fb5FbcAb6aC650692aaa45FbE qwertyuiop
+node claimStake.js testnet ~/.thetacli/keys/encrypted/490ae30F584E778Fb5FbcAb6aC650692aaa45FbE qwertyuiop
 ```
 
