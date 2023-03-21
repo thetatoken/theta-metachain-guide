@@ -1,6 +1,6 @@
 # More on Subchain Validator Staking
 
-In this step, we demonstrate some advanced features of Subchain validator staking. For example, we show that multiple stakers can stake to the same validator. The stakers can withdraw any amount of stake at any time, and claim the stake back after a pending period.
+In this step, we demonstrate some advanced features of Subchain validator staking. For example, we show that multiple stakers can stake to the same validator. The stakers can withdraw any amount of stake at any time, and claim the stake back after a pending period. Moreover, the same staker can stake to multiple validators. 
 
 ## Stake from Another Wallet
 
@@ -10,7 +10,7 @@ With the Main Chain walletnode running, we can execute the following command to 
 SEQ=$(thetacli query account --address=0x2E833968E5bB786Ae419c4d13189fB081Cc43bab | grep sequence | grep -o -E '[0-9]+')
 thetacli tx send --chain="testnet" --from=0x2E833968E5bB786Ae419c4d13189fB081Cc43bab --to=0x490ae30F584E778Fb5FbcAb6aC650692aaa45FbE --tfuel=100 --password=qwertyuiop --seq=$((SEQ+1))
 
-node sendGovToken.js testnet 1000000000 0x490ae30F584E778Fb5FbcAb6aC650692aaa45FbE <PATH/TO/GOV_TOKEN_INIT_DISTRIBUTION_WALLET/KEYSTORE> <GOV_TOKEN_INIT_DISTRIBUTION_WALLET_PASSWORD>
+node sendGovToken.js testnet 1000000000 0x490ae30F584E778Fb5FbcAb6aC650692aaa45FbE <PATH/TO/ADMIN_WALLET_KEYSTORE_FILE> <ADMIN_WALLET_PASSWORD>
 ```
 
 Now, deposit stake the Subchain validator from the new wallet `0x490ae30F584E778Fb5FbcAb6aC650692aaa45FbE`. Note that validator `0x2E833968E5bB786Ae419c4d13189fB081Cc43bab` already has a sufficient amount of wTHETA collateral and TFuel to support cross-chain transactions. Hence the new staker neither needs to deposit additional wTHETA collateral, nor needs to send TFuel to the validator.
@@ -56,3 +56,39 @@ node claimStake.js testnet ~/.thetacli/keys/encrypted/490ae30F584E778Fb5FbcAb6aC
 # claim the third withdrawn stake (i.e. the one correspond to 8888 wei Shares)
 node claimStake.js testnet ~/.thetacli/keys/encrypted/490ae30F584E778Fb5FbcAb6aC650692aaa45FbE qwertyuiop
 ```
+
+## Stake to Another Subchain Validator
+
+One staker can stake to multiple Validators of a Subchain. First, start the second validator for the Subchain with the following commands:
+
+```shell
+# Open a new terminal and run the following commands
+cd ~/metachain_playground/privatenet/workspace
+theta-eth-rpc-adaptor start --config=../subchain/ethrpc2
+
+# Open yet another terminal and run the following commands
+cd ~/metachain_playground/privatenet/workspace
+cp ./subchain/validator/snapshot ../subchain/validator2/
+thetasubchain start --config=../subchain/validator2 --password=qwertyuiop
+```
+
+Wait until Validator2 to get in sync with Validator1. Then use the following command to stake to Validator2 from staker `<ADMIN_WALLET_ADDRESS>` and `0x490ae30F584E778Fb5FbcAb6aC650692aaa45FbE`. The address of Validator2 `<VALIDATOR2>` can be obtain from the auto-generated keystore file under `subchain/validator2/key/encrypted/`.
+
+```shell
+# Deposit stake with wTHETA collateral and intial fee
+node depositStake.js privatenet 100000000000000000000000 <VALIDATOR2> 1000000000000000000000 20000000000000000000000 ~/.thetacli/keys/encrypted/2E833968E5bB786Ae419c4d13189fB081Cc43bab qwertyuiop
+
+# Since the collateral and initial fee requirement have been satisfied, another staker can deposit stake without wTHETA collateral and intial fee
+node depositStake.js privatenet 10000000 <VALIDATOR2> 0 0 ~/.thetacli/keys/encrypted/490ae30F584E778Fb5FbcAb6aC650692aaa45FbE qwertyuiop
+```
+
+Valiator2 should start servicing as a validator for the Subchain when the next dynasty starts. After that, you can withdraw and claim part of the stakes from Validator2:
+
+```shell
+# Withdraw stake from Validator2
+node withdrawStake.js privatenet 7777 <VALIDATOR2> ~/.thetacli/keys/encrypted/490ae30F584E778Fb5FbcAb6aC650692aaa45FbE qwertyuiop
+
+# Wait until the return height, and claim the governance tokens back
+node claimStake.js privatenet ~/.thetacli/keys/encrypted/490ae30F584E778Fb5FbcAb6aC650692aaa45FbE qwertyuiop
+```
+

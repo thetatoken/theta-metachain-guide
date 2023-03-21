@@ -43,11 +43,13 @@ Run the following commands to deploy the Governance token for the subchain. Note
 
 * If you want to use your own imlementation, please compile your solidity source code, and replace this [SubchainGovernanceToken.json](../../../sdk/contracts/SubchainGovernanceToken.json) with the compiler output.
 
+* The command below uses the `<ADMIN_WALLET_ADDRESS>` as the wallet to hold the initial token distribution. You can specify a different wallet if you want to.
+
 ```shell
 cd $METACHAIN_GUIDE_ROOT
 cd sdk/js
 
-node deployGovToken.js testnet <GOV_TOKEN_NAME> <GOV_TOKEN_SYMBOL> <GOV_TOKEN_INIT_DISTRIBUTION_WALLET> <ADMIN_WALLET_ADDRESS> <PATH/TO/ADMIN_WALLET_KEYSTORE_FILE> <ADMIN_WALLET_PASSWORD>
+node deployGovToken.js testnet <GOV_TOKEN_NAME> <GOV_TOKEN_SYMBOL> <SUBCHAIN_ADMIN_ADDRESS> <ADMIN_WALLET_ADDRESS> <PATH/TO/ADMIN_WALLET_KEYSTORE_FILE> <ADMIN_WALLET_PASSWORD>
 ```
 
 The command should print out something similar to the following, which includes the address of the Governance token contract deployed on the Main Chain:
