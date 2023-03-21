@@ -65,7 +65,7 @@ if (process.argv && !(process.argv.length == 7)) {
 let networkType = process.argv[2];
 setCfg(networkType);
 
-let govTokenContractAddress = cfg().SubchainGovernanceTokenContract;
+let govTokenContractAddress = cfg().govTokenContractAddr;
 let amountInWei = process.argv[3];
 let receiverAddr = process.argv[4];
 let senderKeyPath = process.argv[5];
