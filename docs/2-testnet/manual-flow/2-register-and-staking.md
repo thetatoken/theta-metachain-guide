@@ -6,7 +6,7 @@ We have deployed the Wrapped Theta (`wTHETA`) token and the `ChainRegistrarOnMai
 
 ```shell
 WrappedTheta              : 0x90e6ca1087a2340da858069cb8d78d595e4ac798
-ChainRegistrarOnMainchain : 0x359878c13F8690710FDCb2cDB6Da1c0A92661b9E
+ChainRegistrarOnMainchain : 0x01Cb3B1D61E8E833FbC520370d02477e0f07a405
 ```
 
 Through the `ChainRegistrarOnMainchain` smart contract, the subchain operator can register a subchain, and stake to the validators of that subchain. On the Testnet and the Mainnet, we'd need to use the real `wTHETA` tokens as the subchain collaterals. You can wrap the native Theta into `wTHETA` [through the Theta Web Wallet](https://medium.com/theta-network/theta-v3-4-0-b51aa819a20d). If you are a developer and needs the native Theta on the Testnet for subchain development, please contact us at support@thetalabs.org.

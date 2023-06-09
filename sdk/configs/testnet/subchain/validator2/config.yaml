@@ -15,11 +15,11 @@ consensus:
 subchain:
   mainchainEthRpcURL: "http://localhost:18888/rpc"
   subchainEthRpcURL: "http://localhost:19988/rpc"
-  chainRegistrarOnMainchain: "0x359878c13F8690710FDCb2cDB6Da1c0A92661b9E"
-  mainchainTFuelTB: "0x1678BbaB6Db608B27Dac2802C1d89E280b8C2C8f"
-  mainchainTNT20TB: "0x02Cbc51C5bbc37F93ad211a5F405aab00B0951b1"
-  mainchainTNT721TB: "0x0603E7fad093A88C9ADBC685808961FADDAfFF97"
-  mainchainTNT1155TB: "0xD840b9662bf74Ae9838ccEf645E0D6d1573AA9E7"
+  chainRegistrarOnMainchain: "0x01Cb3B1D61E8E833FbC520370d02477e0f07a405"
+  mainchainTFuelTB: "0x9747904F58bb8a83B9060fDF90d2A4CEDd63F840"
+  mainchainTNT20TB: "0x5DeEDCB2ba97d59b00240506151BbC9cc86f014c"
+  mainchainTNT721TB: "0x2364DDB56E9A98E016B5D3d372f648fCEA30c06C"
+  mainchainTNT1155TB: "0x6A75D986911ECdDb2BF1a866Cfc0A33c9Ece1B32"
   updateInterval: 3000
   # use the numerical EVM chainID for <YOUR_EVM_chainID> below, e.g. 360998877 
   chainID: <YOUR_EVM_chainID>
