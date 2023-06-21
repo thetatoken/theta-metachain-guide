@@ -35,7 +35,7 @@ let TestnetConfigs = {
     mainchainID : 365,
     mainchainIDStr : "testnet",
     // mainchainRPC : "http://theta-node-rpc-testnet.thetatoken.org:16888/rpc",
-    mainchainRPC : "http://127.0.0.1:16888/rpc", // assuming that we are running a Testnet walletnode locally
+    mainchainRPC : "http://127.0.0.1:16888/rpc", // assuming that we are running a Testnet walletnode locally, and the walletnode is in-synced with the network
     wTHETAAddr : "0x90e6ca1087a2340da858069cb8d78d595e4ac798",
     registrarOnMainchainAddr : "0x01Cb3B1D61E8E833FbC520370d02477e0f07a405",
     govTokenContractAddr : "<ADDR_OF_YOUR_GOV_TOKEN_CONTRACT>",
@@ -60,7 +60,8 @@ let TestnetConfigs = {
 let MainnetConfigs = {
     mainchainID : 361,
     mainchainIDStr : "mainnet",
-    mainchainRPC: "https://theta-bridge-wallet-partner.thetatoken.org/rpc",
+    //mainchainRPC: "https://theta-bridge-wallet-partner.thetatoken.org/rpc",
+    mainchainRPC : "http://127.0.0.1:16888/rpc", // assuming that we are running a Mainnet walletnode locally, and the walletnode is in-synced with the network
     wTHETAAddr : "0xaf537fb7e4c77c97403de94ce141b7edb9f7fcf0",
     registrarOnMainchainAddr : "0xb164c26fd7970746639151a8C118cce282F272A7",
     govTokenContractAddr : "<ADDR_OF_YOUR_GOV_TOKEN_CONTRACT>",

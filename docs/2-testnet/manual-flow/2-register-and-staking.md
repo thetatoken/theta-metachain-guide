@@ -67,7 +67,7 @@ Balance of init distr wallet: XXXXXX
 -----------------------------------------------
 ```
 
-Then, update `testnetConfigs.govTokenContractAddr` in [configs.js](../../sdk/js/configs.js) with the Gov token address printed by the above command.
+Then, update `TestnetConfigs.govTokenContractAddr` in [configs.js](../../sdk/js/configs.js) with the Gov token address printed by the above command.
 
 ## 2. Register a New Subchain
 
