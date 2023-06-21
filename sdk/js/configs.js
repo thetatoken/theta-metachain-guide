@@ -61,21 +61,21 @@ let MainnetConfigs = {
     mainchainID : 361,
     mainchainIDStr : "mainnet",
     mainchainRPC: "https://theta-bridge-wallet-partner.thetatoken.org/rpc",
-    wTHETAAddr : "",
-    registrarOnMainchainAddr : "",
+    wTHETAAddr : "0xaf537fb7e4c77c97403de94ce141b7edb9f7fcf0",
+    registrarOnMainchainAddr : "0xb164c26fd7970746639151a8C118cce282F272A7",
     govTokenContractAddr : "<ADDR_OF_YOUR_GOV_TOKEN_CONTRACT>",
-    mainchainTFuelTokenBankAddr : "", // TODO: update the contract addresses
-    mainchainTNT20TokenBankAddr : "",
-    mainchainTNT721TokenBankAddr : "",
-    mainchainTNT1155TokenBankAddr : "",
+    mainchainTFuelTokenBankAddr : "0xf83239088B8766a27cD1f46772a2E1f88e916322",
+    mainchainTNT20TokenBankAddr : "0xB3d93735de018Ad48122bf7394734A7d18007e1b",
+    mainchainTNT721TokenBankAddr : "0xFe2d1bE6bD9d342cfa59e75290F9b0B42cdBCDAF",
+    mainchainTNT1155TokenBankAddr : "0xA31168d669112937B0826b1Bf15f0eb12e6B1542",
 
     subchainID : "<YOUR_EVM_CHAIN_ID_INT>", // e.g. 1666666
     subchainIDStr : "<tsub+YOUR_EVM_CHAIN_ID_INT>", // e.g. "tsub1666666"
     subchainRPC : "<YOUR_SUBCHAIN_NATIVE_RPC_URL>",
-    subchainTFuelTokenBankAddr : "",
-    subchainTNT20TokenBankAddr : "",
-    subchainTNT721TokenBankAddr : "",
-    subchainTNT1155TokenBankAddr : "",
+    subchainTFuelTokenBankAddr : "0x5a443704dd4B594B382c22a083e2BD3090A6feF3",
+    subchainTNT20TokenBankAddr : "0x47e9Fbef8C83A1714F1951F142132E6e90F5fa5D",
+    subchainTNT721TokenBankAddr : "0x8Be503bcdEd90ED42Eff31f56199399B2b0154CA",
+    subchainTNT1155TokenBankAddr : "0x47c5e40890bcE4a473A49D7501808b9633F29782",
     initialFee : 10000,
 
     crossChainTransferFeeInTFuel : 10

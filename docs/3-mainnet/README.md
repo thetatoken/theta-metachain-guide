@@ -6,7 +6,7 @@ We provide two options, namely the **manual flow** and the **wizard flow** for l
 
 * **Option 1**. Manual Flow
 
-  * **Step 1**. [Setting up the Testnet Environment](./manual-flow/1-setup.md)
+  * **Step 1**. [Setting up the Mainnet Environment](./manual-flow/1-setup.md)
 
   * **Step 2**. [Subchain Registration and Staking](./manual-flow/2-register-and-staking.md)
 

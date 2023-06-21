@@ -106,7 +106,7 @@ subchain_generate_genesis -mainchainID=testnet -subchainID=<SUBCHAIN_ID_STR> -in
 
 **Notes**:
 
-* `SUBCHAIN_ID_STR` needs to be in the following format: "tsub[subchainID]". Here `subchainID` is the EVM `chainID`, which is an integer no smaller than 1000. For example, assuming your EVM `chainID` is `98123`, then `SUBCHAIN_ID_STR` should be `tsub98123`. Also, since the Testnet Main Chain is shared among multiple subchain, you need to make sure the `SUBCHAIN_ID_STR` you chose has not been registered before. To check if the EVM `chainID` has been registered, please query this method `ChainRegistrarOnMainchain.isARegisteredSubchain(uint256 subchainID) returns (bool)` with your EVM `chainID`. The address of `ChainRegistrarOnMainchain` contract on the Testnet Main Chain is `0x7b5F6232b8edDbe8281111Cf3A2A66f02EE384cD`.
+* `SUBCHAIN_ID_STR` needs to be in the following format: "tsub[subchainID]". Here `subchainID` is the EVM `chainID`, which is an integer no smaller than 1000. For example, assuming your EVM `chainID` is `98123`, then `SUBCHAIN_ID_STR` should be `tsub98123`. Also, since the Testnet Main Chain is shared among multiple subchain, you need to make sure the `SUBCHAIN_ID_STR` you chose has not been registered before. To check if the EVM `chainID` has been registered, please query this method `ChainRegistrarOnMainchain.isARegisteredSubchain(uint256 subchainID) returns (bool)` with your EVM `chainID`. The address of `ChainRegistrarOnMainchain` contract on the Testnet Main Chain is `0x01Cb3B1D61E8E833FbC520370d02477e0f07a405`.
 
 * The `SUBCHAIN_ADMIN_ADDRESS` is an admin address for the subchain with limited previledge. For example, one of its admin capability is to change the cross-chain transfer fee.
 
