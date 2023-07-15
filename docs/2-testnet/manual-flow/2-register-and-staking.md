@@ -42,6 +42,8 @@ Run the following commands to deploy the Governance token for the subchain. Note
 * Here we use the [reference implementation](../../../demos/subchain-governance-token/contracts/SubchainGovernanceToken.sol) of the Subchain Governance token. If you want to implement your own token, please replace with [this file](../../../sdk/contracts/SubchainGovernanceToken.json) with the compiled contract before running the following commands.
 
 * If you want to use your own imlementation, please compile your solidity source code, and replace this [SubchainGovernanceToken.json](../../../sdk/contracts/SubchainGovernanceToken.json) with the compiler output.
+  
+* Moreover, if your Governance token contract implements these two methods `mintStakerReward()` and `stakerRewardPerBlock()` (see [this reference implementation](../../../demos/subchain-governance-token/contracts/SubchainGovernanceToken.sol) of the Governance token contract) to allow the ValidatorStakingManager to mint new tokens, the `minter` of the Governance token needs to be set to the ValidatorStakingManager Contract address (which is `0xeAc3317d8a5A0Fa3FA301c040f967512CE70e8D7` for the Testnet). In the [reference implementation](../../../demos/subchain-governance-token/contracts/SubchainGovernanceToken.sol), the `minter` address can be set through the constructor, and it can be updated with the `updateMinter()` method.
 
 * The command below uses the `<ADMIN_WALLET_ADDRESS>` as the wallet to hold the initial token distribution. You can specify a different wallet if you want to.
 

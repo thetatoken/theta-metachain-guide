@@ -81,6 +81,9 @@ With sufficient amount of `wTHETA` and TFuel in the admin wallet, you can regist
 
 * Before running the command, please edit this [config.js](../../../sdk/js/configs.js) file to update `MainnetConfigs.subchainID` with the EVM `chainID` you reserved for your subchain, on [chainlist.org](https://chainlist.org/).
   
+* Moreover, if your Governance token contract implements these two methods `mintStakerReward()` and `stakerRewardPerBlock()` (see [this reference implementation](../../../demos/subchain-governance-token/contracts/SubchainGovernanceToken.sol) of the Governance token contract) to allow the ValidatorStakingManager to mint new tokens, the `minter` of the Governance token needs to be set to the ValidatorStakingManager Contract address (which is `0xf0716e6221618137fB05D72450e0FC8d9c2919d4` for the Mainnet). In the [reference implementation](../../../demos/subchain-governance-token/contracts/SubchainGovernanceToken.sol), the `minter` address can be set through the constructor, and it can be updated with the `updateMinter()` method.
+
+* 
 * Please also edit [config.js](../../../sdk/js/configs.js) file to update `MainnetConfigs.subchainIDStr` with the `string` version of the subchainID, which is in the form of `tsub[EVM_chainID]`. For example, if your EVM `chainID` is `360123456`, then the `MainnetConfigs.subchainIDStr` can be set to `tsub360123456`. 
 
 ```shell
