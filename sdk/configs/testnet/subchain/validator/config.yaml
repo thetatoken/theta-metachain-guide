@@ -2,6 +2,7 @@
 genesis:
   hash: "<YOUR_GENESIS_HASH>"
 p2p:
+  # Please make sure to configure firewall settings of the validators so the 12100 port of a node is open to all other validators
   port: 12100
 rpc:
   enabled: true
@@ -9,7 +10,7 @@ log:
   levels: "*:info"
   #levels: "*:debug"
 consensus:
-  minBlockInterval: 1
+  minBlockInterval: 2
 subchain:
   mainchainEthRpcURL: "http://localhost:18888/rpc"
   subchainEthRpcURL: "http://localhost:19888/rpc"

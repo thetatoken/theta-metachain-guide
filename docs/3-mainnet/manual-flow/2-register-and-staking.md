@@ -105,6 +105,17 @@ node depositStake.js mainnet <INIT_STAKE_AMOUNT> <VALIDATOR_ADDRESS> <PATH/TO/AD
 
 The script prints out the ValidatorSet of the next dynasty. Make sure your validators are included. If not, please search with the tx hash on the [Theta Explorer](https://explorer.thetatoken.org/) and see why it failed. A possible cause is that the admin wallet does not have sufficient amount of wTHETA and TFuel (least 14,000 wTHETA and 85,000 TFuel are required). 
 
+**Note**: If the subchain has different validators running on different machines, you'd need to update the p2p section of the `config.yaml` file of the validators as show below. You'd also need to update the firewall settings of the two nodes so their `p2p.port` are open to each other.
+
+```yaml
+p2p:
+  # Please make sure to configure firewall settings of the validators so the 12100 port of a node is open to all other validators.
+  port: 12100
+
+  # It is recommended to include the ip_address:p2p_port of ALL the other validators in the seeds list, separated by commas.
+  seeds: <validator_1_IP_address>:12100,<validator_2_IP_address>:12100,<validator_3_IP_address>:12100,...,<validator_n_IP_address>:12100
+```
+
 ## 5. Run the Subchain validator and the ETH RPC Adapter
 
 After the above staking transaction is finalized, we can start the ETH RPC adapter and the Subchain Validator. We need start the subchain ETH RPC adapter **before** starting the subchain validator. This order is important.

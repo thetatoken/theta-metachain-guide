@@ -72,6 +72,19 @@ cp ../subchain/validator/snapshot ../subchain/validator2/
 thetasubchain start --config=../subchain/validator2 --password=qwertyuiop
 ```
 
+**Note**: If you are running the validator2 on a different machine, you'd need to update the p2p section of its `config.yaml` file as show below. You'd also need to update the firewall settings of the two nodes so their `p2p.port` are open to each other.
+
+```yaml
+p2p:
+  # If the two validators are running on different machines, please make sure to configure firewall settings of the validators so 
+  # the 121001 port of this node is open to all other validators.
+  port: 12101
+
+  # If the two validators are running on different machines, in the following line please specify the actual IP address 
+  # of the first validator. It is recommended to include the ip_address:p2p_port of ALL the other validators in the seeds list, separated by commas.
+  seeds: <IP_address_of_valiator_1>:12100
+```
+
 Wait until Validator2 to get in sync with Validator1. Then use the following command to stake to Validator2 from staker `<ADMIN_WALLET_ADDRESS>` and `0x490ae30F584E778Fb5FbcAb6aC650692aaa45FbE`. The address of Validator2 `<VALIDATOR2>` can be obtain from the auto-generated keystore file under `subchain/validator2/key/encrypted/`.
 
 ```shell

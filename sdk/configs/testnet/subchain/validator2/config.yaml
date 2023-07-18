@@ -2,7 +2,12 @@
 genesis:
   hash: "<YOUR_GENESIS_HASH>"
 p2p:
+  # If the two validators are running on different machines, please make sure to configure firewall settings of the validators so 
+  # the 121001 port of this node is open to all other validators.
   port: 12101
+
+  # If the two validators are running on different machines, in the following line please change 127.0.0.1 to the actual IP address 
+  # of the first validator. It is recommended to include the ip_address:p2p_port of ALL the other validators in the seeds list, separated by commas.
   seeds: 127.0.0.1:12100
 rpc:
   enabled: true
@@ -11,7 +16,7 @@ log:
   levels: "*:info"
   #levels: "*:debug"
 consensus:
-  minBlockInterval: 1
+  minBlockInterval: 2
 subchain:
   mainchainEthRpcURL: "http://localhost:18888/rpc"
   subchainEthRpcURL: "http://localhost:19988/rpc"
