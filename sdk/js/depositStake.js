@@ -15,7 +15,9 @@ async function stakeToSubchainValidator(amountInWei, validatorAddr, wThetaCollat
     const wThetaContract = new thetajs.Contract(cfg().wTHETAAddr, SubchainGovernanceTokenContract.abi, wallet) // FIXME: should use wTHETA.abi instead, but SubchainGovernanceTokenContract also has the approve method, so can be used here
     const govTokenContract = new thetajs.Contract(cfg().govTokenContractAddr, SubchainGovernanceTokenContract.abi, wallet)
     const totalGovTokenSupply = await govTokenContract.totalSupply();
-    const stakerRewardPerBlock = await govTokenContract.stakerRewardPerBlock();
+    // Staking rewards are an optional feature on governance tokens.
+    let stakerRewardPerBlock;
+    try { stakerRewardPerBlock = await govTokenContract.stakerRewardPerBlock()} catch (error) {stakerRewardPerBlock = '0'};
     const chainRegistrarOnMainchainContract = new thetajs.Contract(cfg().registrarOnMainchainAddr, ChainRegistrarOnMainchainContract.abi, wallet)
     const vcmAddr = await chainRegistrarOnMainchainContract.vcm();
     const vsmAddr = await chainRegistrarOnMainchainContract.vsm();
