@@ -3,10 +3,10 @@ genesis:
   hash: "<YOUR_GENESIS_HASH>"
 p2p:
   # Please make sure to configure firewall settings of the validators so the 12100 port of a node is open to all other validators.
-  port: 12100
+  port: 12010
 
   # It is recommended to include the ip_address:p2p_port of ALL the other validators in the seeds list, separated by commas.
-  seeds: <validator_1_IP_address>:12100,<validator_2_IP_address>:12100,<validator_3_IP_address>:12100,...,<validator_n_IP_address>:12100
+  seeds: <validator_1_IP_address>:12010,<validator_2_IP_address>:12010,<validator_3_IP_address>:12010,...,<validator_n_IP_address>:12010
 rpc:
   enabled: true
 log:
