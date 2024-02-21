@@ -45,10 +45,10 @@ make install
 Compile the subchain binaries from source code:
 
 ```shell
-# switch THETA to the sc-privatenet branch before compiling thetasubchain
+# switch THETA to the subchain-dependency branch before compiling thetasubchain
 cd $THETA_HOME
-git checkout sc-privatenet
-git pull origin sc-privatenet
+git checkout subchain-dependency
+git pull origin subchain-dependency
 
 git clone https://github.com/thetatoken/theta-protocol-subchain.git $GOPATH/src/github.com/thetatoken/thetasubchain
 export SUBCHAIN_HOME=$GOPATH/src/github.com/thetatoken/thetasubchain
